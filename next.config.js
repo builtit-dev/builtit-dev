@@ -2,16 +2,16 @@
 const nextConfig = {
   output: 'export',
   images: {
-    formats: ['image/webp', 'image/avif'],
-    domains: [],
     unoptimized: true,
   },
   // Set the base path for GitHub Pages deployment
   basePath: '/builtit-template',
-  // Disable server-side image optimization for static export
+  // Set the asset prefix for GitHub Pages deployment
   assetPrefix: '/builtit-template',
   // Ensure trailing slashes for GitHub Pages compatibility
   trailingSlash: true,
+  // Disable image optimization for static export
+  distDir: 'out',
 }
 
 module.exports = nextConfig
