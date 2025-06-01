@@ -12,22 +12,22 @@ interface Testimonial {
   image?: string
 }
 
-const testimonials: (Omit<Testimonial, 'image'> & { emoji: string })[] = [
+const testimonials: Testimonial[] = [
   {
     id: 1,
     quote: "This is a fantastic service! The team was professional, fast, and exceeded my expectations.",
     author: "Jane Doe",
     title: "Founder",
     company: "Startup Inc.",
-    emoji: "😀"
+    image: "/images/thispersondoesnotexist-1.jpg"
   },
   {
     id: 2,
     quote: "Highly recommended. Great communication and delivery on time.",
-    author: "John Smith",
+    author: "Sophia Kim",
     title: "Product Manager",
     company: "Tech Solutions",
-    emoji: "🚀"
+    image: "/images/thispersondoesnotexist-2.jpg"
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const testimonials: (Omit<Testimonial, 'image'> & { emoji: string })[] = [
     author: "Alex Lee",
     title: "CEO",
     company: "InnovateX",
-    emoji: "💡"
+    image: "/images/thispersondoesnotexist.jpg"
   }
 ];
 
@@ -115,9 +115,15 @@ export default function TestimonialsSection() {
       {/* Glow Effect on Hover */}
       <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-accent-primary/10 to-accent-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      {/* Emoji Placeholder */}
+      {/* Avatar Image */}
       <div className="flex justify-center mb-6">
-        <span className="text-5xl md:text-6xl" role="img" aria-label="testimonial-emoji">{testimonial.emoji}</span>
+        <span className="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-accent-primary via-accent-secondary to-accent-primary block">
+          <img 
+            src={testimonial.image} 
+            alt={`${testimonial.author} avatar`} 
+            className="w-full h-full rounded-full object-cover bg-bg-card"
+          />
+        </span>
       </div>
 
       {/* Quote */}

@@ -294,8 +294,24 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-medium text-text-primary mb-1">Email Us</h4>
                   <p className="text-text-secondary text-sm mb-2">For project inquiries and questions</p>
-                  <a href="mailto:contact@example.com" className="text-accent-primary hover:text-accent-secondary transition-colors">
-                    contact@example.com
+                  <a
+                    href="/contact"
+                    className="group relative flex items-center justify-center px-10 py-5 font-semibold text-lg rounded-xl min-w-[260px] transition-all duration-300 overflow-hidden"
+                    style={{
+                      background: 'rgba(0, 0, 0, 0.3)',
+                      color: 'var(--text-primary)',
+                      border: '2px solid rgba(255, 255, 255, 0.2)',
+                      backdropFilter: 'blur(20px)'
+                    }}
+                  >
+                    <span className="relative z-10 mr-3">Contact Us</span>
+                    <svg className="relative z-10 w-5 h-5 text-accent-secondary opacity-70 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    {/* Shine effect */}
+                    <div 
+                      className="absolute top-0 left-0 w-full h-full opacity-0 group-hover:opacity-100 transition-all duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full"
+                    />
                   </a>
                 </div>
               </div>

@@ -82,12 +82,7 @@ export default function Footer() {
               >
                 <div className="flex items-center space-x-3 mb-6">
                   <a href="/" className="flex items-center space-x-3 text-[#5A45FF] hover:text-[#4F46E5] transition-colors">
-                    <span className="w-7 h-7 flex items-center justify-center text-current">
-                      <img src="/images/placeholder-logo.png" alt="Placeholder Logo" className="h-10 w-auto" />
-                    </span>
-                    <span className="font-tilt-warp text-[1.6875rem] font-bold text-text-primary">
-                      Builtit.dev
-                    </span>
+                    <img src="/images/full logo.svg" alt="BuiltIt.dev Logo" className="h-10 w-auto" />
                   </a>
                 </div>
                 

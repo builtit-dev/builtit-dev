@@ -82,7 +82,7 @@ export default function Header() {
           >
             <Link href="/" className="group">
               <img 
-                src="/images/icons/logo_full.svg" 
+                src="/images/full logo.svg" 
                 alt="BuiltIt.dev Logo" 
                 className="h-9 w-auto transition-all duration-200 group-hover:opacity-80 group-hover:scale-105"
               />

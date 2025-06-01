@@ -130,9 +130,9 @@ export default function Home() {
                 <div className="absolute top-0 left-0 w-full h-full opacity-0 group-hover:opacity-100 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -translate-x-full group-hover:translate-x-full transition-all duration-700" />
               </motion.a>
 
-              {/* Secondary CTA - Book Strategy Call */}
-              <motion.button
-                onClick={handleCalendlyClick}
+              {/* Secondary CTA - Contact Us */}
+              <a
+                href="/contact"
                 className="group relative flex items-center justify-center px-10 py-5 font-semibold text-lg rounded-xl transition-all duration-300 overflow-hidden w-full sm:w-auto"
                 style={{
                   background: 'rgba(0, 0, 0, 0.3)',
@@ -141,24 +141,17 @@ export default function Home() {
                   backdropFilter: 'blur(20px)',
                   minWidth: '260px'
                 }}
-                whileHover={{ 
-                  y: -2,
-                  borderColor: 'var(--accent-secondary)',
-                  color: 'white',
-                  boxShadow: '0 10px 25px rgba(0, 224, 255, 0.3)'
-                }}
-                whileTap={{ scale: 0.95 }}
               >
-                <span className="relative z-10 mr-3">Book Strategy Call</span>
+                <span className="relative z-10 mr-3">Contact Us</span>
                 <svg className="relative z-10 w-6 h-6 text-accent-secondary opacity-70 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 
                 {/* Shine effect - exactly like in Hero */}
                 <div 
                   className="absolute top-0 left-0 w-full h-full opacity-0 group-hover:opacity-100 transition-all duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full"
                 />
-              </motion.button>
+              </a>
             </div>
           </div>
         </section>

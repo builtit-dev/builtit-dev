@@ -132,7 +132,7 @@ const TermsOfService = () => {
                 <li><strong>Binding Arbitration</strong> – Any dispute will be resolved by binding arbitration under the AAA Commercial Arbitration Rules.</li>
                 <li><strong>Small-Claims & IP Relief</strong> – Either party may (i) bring an individual action in small-claims court or (ii) seek injunctive relief in court for IP infringement.</li>
                 <li><strong>Class-Action Waiver</strong> – Disputes must be brought individually; class actions are waived.</li>
-                <li><strong>Opt-Out</strong> – You may opt out of arbitration by emailing <ObfuscatedEmail user="privacy" domain="builtit.dev" policyPage={true} /> within 30 days of first acceptance of these Terms.</li>
+                <li><strong>Opt-Out</strong> – You may opt out of arbitration by emailing <ObfuscatedEmail user="contact" domain="example.com" policyPage={true} /> within 30 days of first acceptance of these Terms.</li>
                 <li><strong>Venue</strong> – If a dispute is not arbitrated, exclusive venue lies in the state or federal courts of San Mateo County, California.</li>
               </ul>
               
@@ -154,7 +154,7 @@ const TermsOfService = () => {
                 <span className="text-accent-primary">14</span> | Accessibility
               </h3>
               <p className="mb-6 text-text-secondary">
-                We aim to conform to WCAG 2.1 AA. Email <ObfuscatedEmail user="hello" domain="builtit.dev" policyPage={true} /> if you encounter accessibility barriers.
+                We aim to conform to WCAG 2.1 AA. Email <ObfuscatedEmail user="contact" domain="example.com" policyPage={true} /> if you encounter accessibility barriers.
               </p>
               
               <h3 className="text-xl font-semibold mb-3 text-text-primary">
@@ -175,7 +175,7 @@ const TermsOfService = () => {
                 <span className="text-accent-primary">17</span> | Contact
               </h3>
               <p className="mb-6 text-text-secondary">
-                Questions? Email <ObfuscatedEmail user="hello" domain="builtit.dev" policyPage={true} /> or <ObfuscatedEmail user="privacy" domain="builtit.dev" policyPage={true} />.
+                Questions? Email <ObfuscatedEmail user="contact" domain="example.com" policyPage={true} /> or <ObfuscatedEmail user="contact" domain="example.com" policyPage={true} />.
               </p>
             </div>
           </motion.div>

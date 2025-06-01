@@ -17,8 +17,12 @@
   
   <!-- Logo -->
   <g transform="translate(100, 200)">
-    <svg width="80" height="80" viewBox="0 0 330 460" fill="none">
-      <path d="M196.445 0C259.889 0 311.32 51.4313 311.32 114.875C311.32 161.287 283.796 201.268 244.181 219.391C293.946 235.216 330 281.801 330 336.809C330 404.845 274.846 459.999 206.81 459.999H0V0H196.445Z" fill="#5A45FF"/>
+    <!-- New Logo SVG, white fill -->
+    <svg width="120" height="40" viewBox="0 0 300 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M...Z" fill="#fff"/>
+        <!-- Replace above path with the main path(s) from your full logo, setting fill to white (#fff) -->
+      </g>
     </svg>
   </g>
   

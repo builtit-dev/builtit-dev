@@ -103,7 +103,7 @@ const CookiePolicy = () => {
               <p className="mb-6 text-text-secondary">We may update this Cookie Policy; a new “Last Updated” date will appear at the top.</p>
 
               <h3 className="text-xl font-semibold mb-3 text-text-primary">6 | Contact</h3>
-              <p className="mb-6 text-text-secondary">Email <ObfuscatedEmail user="privacy" domain="builtit.dev" policyPage={true} /> with cookie questions.</p>
+              <p className="mb-6 text-text-secondary">Email <ObfuscatedEmail user="contact" domain="example.com" policyPage={true} /> with cookie questions.</p>
 
             </div>
           </motion.div>

@@ -31,7 +31,7 @@ openGraph: {
   images: [
     {
       url: '/og-image.png',
-      secureUrl: 'https://builtit.dev/og-image.png',
+      secureUrl: '[REDACTED_FOR_OPEN_SOURCE]',
       width: 1200,
       height: 630,
       alt: 'BuiltIt.dev - AI-Ready MVPs. Expertly Shipped.',
@@ -45,7 +45,7 @@ openGraph: {
 ---
 
 - **All email addresses (footer, Terms, Privacy, Cookie Policy) are protected from scraping using the ObfuscatedEmail component.** Emails are revealed immediately on page load for users, but are never present in static HTML. This dramatically reduces spam and scraping risk, while maintaining accessibility and user experience.
-- **Footer & Policy Pages:** hello@builtit.dev and privacy@builtit.dev are shown as normal, clickable email addresses immediately. There are no [at]/[dot] placeholders anywhere on the site.
+- **Footer & Policy Pages:** email@example.com and email@example.com are shown as normal, clickable email addresses immediately. There are no [at]/[dot] placeholders anywhere on the site.
 - **Security:** Emails are assembled client-side from separate user/domain props, so bots scraping HTML can't harvest them. No emails are present in static HTML output.
 - **Metadata Compliance:** Policy pages use layout.tsx for metadata, enabling Framer Motion and Next.js 14 compatibility.
 - **Build/Deployment:** Fully Next.js 14-compliant, with Framer Motion and SEO preserved.
@@ -165,7 +165,7 @@ components/
 - **Metadata Architecture**: Homepage metadata moved to separate server component (`app/page.metadata.ts`) for Next.js 14 compliance
 
 ### 8. Footer
-- **May 2025:** Now features hello@builtit.dev in near-white, highly visible style using ObfuscatedEmail for anti-scraping. The email is shown immediately for users, but is never present in HTML source.
+- **May 2025:** Now features email@example.com in near-white, highly visible style using ObfuscatedEmail for anti-scraping. The email is shown immediately for users, but is never present in HTML source.
 - All emails are protected from scraping by being assembled client-side. There are no [at]/[dot] placeholders and no need for hover/click to reveal.
 - Social media and legal links unchanged.
 - Comprehensive link structure

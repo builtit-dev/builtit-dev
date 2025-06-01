@@ -117,7 +117,7 @@ const PrivacyPolicy = () => {
               <p className="mb-6 text-text-secondary">We keep data only as long as needed for stated purposes, to comply with law, or to resolve disputes (see table above).</p>
 
               <h3 className="text-xl font-semibold mb-3 text-text-primary">5 | International Transfers</h3>
-              <p className="mb-6 text-text-secondary">BuiltIt.dev is US-based. Transfers from the EEA, UK, or Switzerland rely on <strong>Standard Contractual Clauses</strong> (plus UK and Swiss addenda). Request copies at <ObfuscatedEmail user="privacy" domain="builtit.dev" policyPage={true} />.</p>
+              <p className="mb-6 text-text-secondary">BuiltIt.dev is US-based. Transfers from the EEA, UK, or Switzerland rely on <strong>Standard Contractual Clauses</strong> (plus UK and Swiss addenda). Request copies at <ObfuscatedEmail user="contact" domain="example.com" policyPage={true} />.</p>
 
               <h3 className="text-xl font-semibold mb-3 text-text-primary">6 | Who We Share Data With</h3>
               <div className="overflow-x-auto mb-6">
@@ -169,7 +169,7 @@ const PrivacyPolicy = () => {
                 <li><strong>California</strong> – right to know, delete, correct, opt-out of sharing, non-discrimination, limit SPI.</li>
                 <li><strong>Global Privacy Control</strong> signals are honored as an opt-out of sharing for targeted advertising (we currently do none).</li>
               </ul>
-              <p className="mb-6 text-text-secondary">Email <ObfuscatedEmail user="privacy" domain="builtit.dev" policyPage={true} /> to exercise rights; we may verify identity before acting.</p>
+              <p className="mb-6 text-text-secondary">Email <ObfuscatedEmail user="contact" domain="example.com" policyPage={true} /> to exercise rights; we may verify identity before acting.</p>
 
               <h3 className="text-xl font-semibold mb-3 text-text-primary">9 | Children</h3>
               <p className="mb-6 text-text-secondary">The Services are not directed to anyone under 18. We do not knowingly collect data from minors.</p>
@@ -181,7 +181,7 @@ const PrivacyPolicy = () => {
               <p className="mb-6 text-text-secondary">We may update this Privacy Policy. Changes are effective when posted with a new "Last Updated" date.</p>
 
               <h3 className="text-xl font-semibold mb-3 text-text-primary">12 | Contact</h3>
-              <p className="mb-6 text-text-secondary">Questions? Email <ObfuscatedEmail user="privacy" domain="builtit.dev" policyPage={true} />.</p>
+              <p className="mb-6 text-text-secondary">Questions? Email <ObfuscatedEmail user="contact" domain="example.com" policyPage={true} />.</p>
 
             </div>
           </motion.div>
