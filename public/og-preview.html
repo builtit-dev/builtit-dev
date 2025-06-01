@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image Preview</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            font-family: Inter, system-ui, sans-serif;
+        }
+        .preview {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .preview h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .preview img {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h1>Open Graph Image Preview</h1>
+        <p>To convert these SVG images to PNG format for social media sharing:</p>
+        <ol>
+            <li>Right-click on each image below and select "Save image as..."</li>
+            <li>Or use an online SVG to PNG converter like <a href="https://convertio.co/svg-png/" target="_blank">convertio.co</a></li>
+            <li>Save the files as <code>og-image.png</code> and <code>og-image-square.png</code> in the public folder</li>
+        </ol>
+    </div>
+
+    <div class="preview">
+        <h2>Main OG Image (1200x630)</h2>
+        <img src="og-image.svg" alt="Main OG Image" style="max-width: 100%; height: auto;">
+    </div>
+
+    <div class="preview">
+        <h2>Square OG Image (1200x1200)</h2>
+        <img src="og-image-square.svg" alt="Square OG Image" style="max-width: 600px; height: auto;">
+    </div>
+</body>
+</html>

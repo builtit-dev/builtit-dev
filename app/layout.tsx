@@ -1,0 +1,194 @@
+import React from 'react'
+import type { Metadata } from 'next'
+import { Inter, Manrope, Tilt_Warp } from 'next/font/google'
+import Script from 'next/script'
+import './globals.css'
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const manrope = Manrope({ 
+  subsets: ['latin'],
+  variable: '--font-manrope',
+  display: 'swap',
+})
+
+const tiltWarp = Tilt_Warp({ 
+  subsets: ['latin'],
+  variable: '--font-tilt-warp',
+  display: 'swap',
+  weight: ['400'],
+})
+
+export const metadata: Metadata = {
+  // Ensure this metadataBase is used for all URLs
+  metadataBase: new URL('https://builtit.dev'),
+  title: {
+    default: 'BuiltIt.dev - AI-Ready MVPs. Expertly Shipped.',
+    template: '%s | BuiltIt.dev'
+  },
+  description: 'Transform your startup idea into a production-ready AI MVP in just 14 days. Expert development, strategic thinking, and rapid execution. Join 100+ successful founders who chose BuiltIt.dev.',
+  keywords: [
+    'MVP development',
+    'AI startup',
+    'rapid prototyping',
+    'Next.js development',
+    'startup consulting',
+    '14-day sprint',
+    'AI integration',
+    'production-ready MVP',
+    'startup development',
+    'technical consulting',
+    'rapid execution',
+    'expert developers'
+  ],
+  authors: [{ name: 'BuiltIt.dev', url: 'https://builtit.dev' }],
+  creator: 'BuiltIt.dev',
+  publisher: 'BuiltIt.dev',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', type: 'image/png', sizes: '180x180' },
+    ],
+  },
+  manifest: '/site.webmanifest',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://builtit.dev',
+    title: 'BuiltIt.dev - AI-Ready MVPs. Expertly Shipped.',
+    description: 'Transform your startup idea into a production-ready AI MVP in just 14 days. Expert development, strategic thinking, and rapid execution.',
+    siteName: 'BuiltIt.dev',
+    images: [
+      {
+        url: 'https://builtit.dev/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'BuiltIt.dev - AI-Ready MVPs. Expertly Shipped.',
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BuiltIt.dev - AI-Ready MVPs. Expertly Shipped.',
+    description: 'Transform your startup idea into a production-ready AI MVP in just 14 days. Expert development, strategic thinking, and rapid execution.',
+    creator: '@builtitdev',
+    images: ['https://builtit.dev/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  // The canonical URL is set dynamically via middleware for each page
+  alternates: {
+    canonical: 'https://builtit.dev',
+  },
+  category: 'technology',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  // This is server-side code that will run on each request
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BuiltIt.dev",
+    "alternateName": "BuiltIt",
+    "url": "https://builtit.dev",
+    "logo": "https://builtit.dev/favicon-512x512.png",
+    "description": "Transform your startup idea into a production-ready AI MVP in just 14 days. Expert development, strategic thinking, and rapid execution.",
+    "foundingDate": "2024",
+    "sameAs": [
+      "https://twitter.com/builtitdev",
+      "https://linkedin.com/company/builtitdev"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "url": "https://builtit.dev/contact"
+    },
+    "service": {
+      "@type": "Service",
+      "name": "MVP Development",
+      "description": "14-day sprint methodology to transform startup ideas into production-ready AI MVPs",
+      "provider": {
+        "@type": "Organization",
+        "name": "BuiltIt.dev"
+      },
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "MVP Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Starter MVP",
+              "description": "Perfect for validating your core idea"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Growth MVP",
+              "description": "Ready to scale and attract users"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Enterprise MVP",
+              "description": "Full-featured platform with advanced capabilities"
+            }
+          }
+        ]
+      }
+    }
+  }
+
+  return (
+    <html lang="en" className={`${inter.variable} ${manrope.variable} ${tiltWarp.variable} bg-bg-primary text-text-primary overflow-x-hidden`}>
+      <head>
+        {/* Analytics scripts can be added here */}
+        {/* REMOVED manual og:image meta tags to prevent conflicts with Next.js generated tags */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* The canonical URL is set dynamically via middleware */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
+      <body className={`${inter.variable} ${manrope.variable} ${tiltWarp.variable} min-h-screen overflow-x-hidden`}>
+        {/* Analytics noscript tags can be added here */}
+        {children}
+      </body>
+    </html>
+  )
+}

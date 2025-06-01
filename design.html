@@ -1,0 +1,647 @@
+<!-- Footer Component - mot final-->
+<footer class="footer">
+    <div class="footer-content">
+        <!-- Brand Area -->
+        <div class="footer-brand">
+            <a href="/" class="footer-logo">BuiltIt.dev</a>
+            <p class="footer-tagline">AI-Ready MVPs. Expertly Shipped.</p>
+            <div class="footer-social">
+                <!-- LinkedIn Icon -->
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                
+                <!-- GitHub Icon -->
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-nav">
+            <!-- Services Column -->
+            <div class="footer-nav-group">
+                <h3 class="footer-nav-heading">Services</h3>
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-item">
+                        <a href="#ai-mvps" class="footer-nav-link">AI MVPs</a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a href="#rapid-development" class="footer-nav-link">Rapid Development</a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a href="#product-strategy" class="footer-nav-link">Product Strategy</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Company Column -->
+            <div class="footer-nav-group">
+                <h3 class="footer-nav-heading">Company</h3>
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-item">
+                        <a href="#about" class="footer-nav-link">About Us</a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a href="#contact" class="footer-nav-link">Contact</a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a href="#portfolio" class="footer-nav-link">Portfolio</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Resources Column -->
+            <div class="footer-nav-group">
+                <h3 class="footer-nav-heading">Resources</h3>
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-item">
+                        <a href="#process" class="footer-nav-link">Process</a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a href="#blog" class="footer-nav-link">Blog</a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a href="#faq" class="footer-nav-link">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="footer-copyright">
+        <p class="footer-copyright-text">
+            © <span id="current-year"></span> BuiltIt.dev. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<script>
+    // Set current year dynamically
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+<!-- Testimonials Section -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials Section - BuiltIt.dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Design System Variables */
+        :root {
+            --bg-primary: #0D0618;
+            --bg-card: #1F1A30;
+            --accent-primary: #7F00FF;
+            --accent-secondary: #00E0FF;
+            --border-subtle: rgba(127, 0, 255, 0.15);
+            --text-primary: #F5F5F7;
+            --text-secondary: #A0A0B8;
+            --text-muted: #70708A;
+            --rounded-lg: 12px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+            --space-3xl: 64px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .testimonials-section {
+            padding: 100px var(--space-lg) 140px;
+            background-color: var(--bg-primary);
+        }
+
+        @media (min-width: 768px) {
+            .testimonials-section {
+                padding: 120px var(--space-2xl) 160px;
+            }
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-title {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 600;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+            line-height: 1.3;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+
+        @media (min-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-xl);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--rounded-lg);
+            padding: var(--space-2xl);
+            position: relative;
+            transition: all 0.3s ease;
+            height: fit-content;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(127, 0, 255, 0.3);
+            box-shadow: 0 12px 40px rgba(127, 0, 255, 0.1);
+        }
+
+        .quote-icon {
+            font-size: 2.5rem;
+            color: var(--accent-primary);
+            line-height: 1;
+            margin-bottom: 20px;
+            font-family: Georgia, serif;
+            font-weight: bold;
+            opacity: 0.8;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-2xl);
+            font-weight: 400;
+        }
+
+        .testimonial-author {
+            border-top: 1px solid rgba(127, 0, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        .author-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .author-title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Subtle animation on load */
+        .testimonial-card {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <h2 class="testimonials-title">What Our Clients Say</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">
+                        BuiltIt delivered our outstanding MVP in just 2 weeks, enabling us to secure first-round funding with the prototype.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-name">Alex Chen</div>
+                        <div class="author-title">Founder, FindMe.pet</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">
+                        Working with BuiltIt was refreshing. Clear communication, fast development, and a product strategy that actually made sense for our early-stage startup.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-name">Sarah Johnson</div>
+                        <div class="author-title">CEO, Debt Cat</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">
+                        The speed at which BuiltIt works is incredible. We went from idea to a working AI prototype that we could demo to investors in less than 3 weeks.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-name">Michael Rodriguez</div>
+                        <div class="author-title">CTO, TechFounders</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+<!-- header Section --><!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BuiltIt.dev - Hero Section</title>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            :root {
+                --bg-primary: #0C0C0C;
+                --bg-secondary: #151515;
+                --accent-primary: #7F00FF;
+                --accent-secondary: #00E0FF;
+                --text-primary: #FFFFFF;
+                --text-secondary: #B0B0B0;
+                --text-muted: #707070;
+            }
+    
+            body {
+                font-family: 'Inter', sans-serif;
+                background: var(--bg-primary);
+                color: var(--text-primary);
+                overflow-x: hidden;
+            }
+    
+            .hero-container {
+                min-height: 100vh;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem;
+                background: linear-gradient(135deg, #0C0C0C 0%, #1a0a1a 50%, #0C0C0C 100%);
+            }
+    
+            .hero-background {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: 
+                    radial-gradient(circle at 20% 20%, rgba(127, 0, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(0, 224, 255, 0.05) 0%, transparent 50%);
+                pointer-events: none;
+            }
+    
+            .hero-grid {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: 
+                    linear-gradient(rgba(127, 0, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(127, 0, 255, 0.03) 1px, transparent 1px);
+                background-size: 60px 60px;
+                opacity: 0.3;
+                animation: grid-pulse 8s ease-in-out infinite;
+            }
+    
+            @keyframes grid-pulse {
+                0%, 100% { opacity: 0.1; }
+                50% { opacity: 0.3; }
+            }
+    
+            .hero-content {
+                max-width: 1200px;
+                width: 100%;
+                text-align: center;
+                position: relative;
+                z-index: 2;
+            }
+    
+            .hero-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: linear-gradient(135deg, rgba(127, 0, 255, 0.1), rgba(0, 224, 255, 0.05));
+                border: 1px solid rgba(127, 0, 255, 0.2);
+                padding: 12px 24px;
+                border-radius: 50px;
+                margin-bottom: 2rem;
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--text-secondary);
+                backdrop-filter: blur(10px);
+                animation: float 6s ease-in-out infinite;
+            }
+    
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+            }
+    
+            .hero-badge::before {
+                content: '⚡';
+                font-size: 16px;
+            }
+    
+            .hero-title {
+                font-family: 'Manrope', sans-serif;
+                font-size: clamp(3rem, 8vw, 5.5rem);
+                font-weight: 800;
+                line-height: 1.1;
+                margin-bottom: 1.5rem;
+                background: linear-gradient(135deg, #FFFFFF 0%, #B0B0B0 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                letter-spacing: -0.02em;
+            }
+    
+            .hero-title .accent {
+                background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                position: relative;
+            }
+    
+            .hero-subtitle {
+                font-size: clamp(1.125rem, 2vw, 1.375rem);
+                color: var(--text-secondary);
+                margin-bottom: 3rem;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+                line-height: 1.6;
+                font-weight: 400;
+            }
+    
+            .hero-cta-container {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+                margin-bottom: 4rem;
+            }
+    
+            .cta-buttons {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+    
+            .cta-primary {
+                background: linear-gradient(135deg, var(--accent-primary) 0%, #9A1FFF 100%);
+                color: white;
+                padding: 16px 32px;
+                border-radius: 12px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+    
+            .cta-primary::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                transition: left 0.5s;
+            }
+    
+            .cta-primary:hover::before {
+                left: 100%;
+            }
+    
+            .cta-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(127, 0, 255, 0.3);
+            }
+    
+            .cta-secondary {
+                background: transparent;
+                color: var(--text-primary);
+                padding: 16px 32px;
+                border-radius: 12px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 16px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                cursor: pointer;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+            }
+    
+            .cta-secondary:hover {
+                border-color: var(--accent-secondary);
+                color: var(--accent-secondary);
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(0, 224, 255, 0.1);
+            }
+    
+            .hero-stats {
+                display: flex;
+                justify-content: center;
+                gap: 3rem;
+                flex-wrap: wrap;
+                opacity: 0.8;
+            }
+    
+            .stat-item {
+                text-align: center;
+                min-width: 120px;
+            }
+    
+            .stat-number {
+                font-family: 'Manrope', sans-serif;
+                font-size: 2rem;
+                font-weight: 700;
+                color: var(--accent-primary);
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+    
+            .stat-label {
+                font-size: 14px;
+                color: var(--text-muted);
+                font-weight: 500;
+            }
+    
+            .floating-elements {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+            }
+    
+            .floating-element {
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: var(--accent-primary);
+                border-radius: 50%;
+                animation: float-random 10s linear infinite;
+            }
+    
+            .floating-element:nth-child(2) {
+                background: var(--accent-secondary);
+                animation-delay: -2s;
+                animation-duration: 12s;
+            }
+    
+            .floating-element:nth-child(3) {
+                animation-delay: -4s;
+                animation-duration: 8s;
+            }
+    
+            @keyframes float-random {
+                0% {
+                    transform: translateY(100vh) rotate(0deg);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-100px) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+    
+            /* Responsive */
+            @media (max-width: 768px) {
+                .hero-container {
+                    padding: 1rem;
+                }
+                
+                .cta-buttons {
+                    flex-direction: column;
+                    width: 100%;
+                    max-width: 300px;
+                }
+                
+                .hero-stats {
+                    gap: 2rem;
+                }
+                
+                .stat-number {
+                    font-size: 1.5rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section class="hero-container">
+            <div class="hero-background"></div>
+            <div class="hero-grid"></div>
+            
+            <div class="floating-elements">
+                <div class="floating-element" style="left: 10%; animation-delay: 0s;"></div>
+                <div class="floating-element" style="left: 30%; animation-delay: -3s;"></div>
+                <div class="floating-element" style="left: 70%; animation-delay: -6s;"></div>
+                <div class="floating-element" style="left: 90%; animation-delay: -9s;"></div>
+            </div>
+    
+            <div class="hero-content">
+                <div class="hero-badge">
+                    Ship Production-Ready MVPs
+                </div>
+                
+                <h1 class="hero-title">
+                    Build & Launch Your<br>
+                    <span class="accent">AI-Ready MVP</span><br>
+                    in 14 Days
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Expert Product Management meets Full-Stack Development. 
+                    Skip the agency runaround — work directly with a seasoned PM who codes.
+                </p>
+                
+                <div class="hero-cta-container">
+                    <div class="cta-buttons">
+                        <a href="#" class="cta-primary">Book Free Strategy Call</a>
+                        <a href="#" class="cta-secondary">See Our Work</a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Features Shipped</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Years SaaS PM</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">AI-Ready</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    </html>
