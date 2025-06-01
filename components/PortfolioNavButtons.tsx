@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { getBasePath } from '@/lib/utils'
+
 
 export default function PortfolioNavButtons() {
-  const basePath = getBasePath()
+  const basePath = '/builtit-template'
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {

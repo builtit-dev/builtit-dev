@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { getBasePath } from '@/lib/utils'
+
 
 interface Advantage {
   id: string
@@ -76,7 +76,7 @@ const cardVariants = {
 }
 
 const BuiltItAdvantage = () => {
-  const basePath = getBasePath()
+  const basePath = '/builtit-template'
   return (
     <section id="advantage" className="relative py-20 lg:py-24 overflow-hidden">
       {/* Background Elements */}

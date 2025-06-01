@@ -4,7 +4,7 @@ import React from 'react'
 import Script from 'next/script'
 import { motion } from 'framer-motion'
 import Header from '../components/Header'
-import { getBasePath } from '@/lib/utils'
+
 import HeroSection from '../components/HeroSection'
 import ProcessSection from '../components/ProcessSection'
 import BuiltItAdvantage from '../components/BuiltItAdvantage'
@@ -52,7 +52,7 @@ const structuredData = {
 }
 
 export default function Home() {
-  const basePath = getBasePath()
+  const basePath = '/builtit-template'
   const handleCalendlyClick = () => {
     // @ts-ignore - Calendly is loaded dynamically
     if (typeof window !== 'undefined' && window.Calendly) {

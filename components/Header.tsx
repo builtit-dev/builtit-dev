@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { getBasePath } from '@/lib/utils'
+
 
 // Helper function to determine if we're in development or production
 // Removed as we now use getBasePath utility
@@ -24,7 +24,7 @@ export default function Header() {
 
   // Handle paths differently in development vs production
   // Get basePath from utility function
-  const basePath = getBasePath()
+  const basePath = '/builtit-template'
   
   // In development, pathname won't have basePath
   // In production with static export, it will include basePath

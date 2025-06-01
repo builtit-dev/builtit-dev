@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { getBasePath } from '@/lib/utils'
+
 
 interface ProcessStep {
   id: number
@@ -62,7 +62,7 @@ const stepVariants = {
 }
 
 export default function ProcessSection() {
-  const basePath = getBasePath()
+  const basePath = '/builtit-template'
   return (
     <section id="process" className="relative py-12 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6">

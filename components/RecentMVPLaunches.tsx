@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getBasePath } from '@/lib/utils'
+
 
 interface MVPProject {
   id: string
@@ -65,7 +65,7 @@ const cardVariants = {
 }
 
 const RecentMVPLaunches = () => {
-  const basePath = getBasePath()
+  const basePath = '/builtit-template'
   return (
     <section id="recent-launches" className="relative py-12 lg:py-24 overflow-hidden mb-24 sm:mb-32 lg:mb-0 scroll-mt-32">
       {/* Background Elements */}

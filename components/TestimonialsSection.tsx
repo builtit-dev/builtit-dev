@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { getBasePath } from '@/lib/utils'
+
 
 interface Testimonial {
   id: number
@@ -69,7 +69,7 @@ const cardVariants = {
 }
 
 export default function TestimonialsSection() {
-  const basePath = getBasePath()
+  const basePath = '/builtit-template'
   return (
     <section id="reviews" className="relative py-24 lg:py-32 overflow-hidden scroll-mt-32">
       {/* Background Elements */}
