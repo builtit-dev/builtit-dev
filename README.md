@@ -75,9 +75,9 @@ Deploy easily to Vercel, Netlify, Cloudflare Pages, or any Next.js-compatible ho
 ---
 
 ## 🙏 Credits & License
-- This template is open source and free to use.
+- This template is open source and free to use under the MIT License.
 - Inspired by and forked from the commercial site [builtit.dev](https://builtit.dev).
-- See LICENSE for details (add your license file if needed).
+- See [LICENSE](LICENSE) for full license details.
 
 ---
 
