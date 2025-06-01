@@ -43,7 +43,7 @@ This is an open-source, production-ready landing page template built with Next.j
 This template includes anonymized backend code for handling contact form submissions:
 
 ### 1. `/backend/cloudflare-worker`
-- **index.js**: Cloudflare Worker proxy for secure form submission and CORS handling. Replace placeholders with your own domains and script URLs before deploying.
+- **index.js**: Cloudflare Worker proxy for secure form submission and CORS handling. Update the placeholders with your own production domains and Apps Script endpoint before deploying.
 
 ### 2. `/backend/google-apps-script`
 - **contact-form.gs**: Google Apps Script to receive POSTs, write to Google Sheets, and send notification emails. All sensitive info is replaced with placeholders—fill in your own values before use.
