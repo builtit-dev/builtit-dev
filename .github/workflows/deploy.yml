@@ -33,6 +33,8 @@ jobs:
         run: npm run build
       - name: Create .nojekyll file
         run: touch ./out/.nojekyll
+      - name: Verify CNAME file
+        run: ls -la ./out/CNAME || echo "CNAME file should be present in the output directory"
       - name: List output directory
         run: ls -la ./out
       - name: Upload artifact
