@@ -1,4 +1,88 @@
-# BuiltIt.dev - Modern Landing Page
+# Next.js 14 Landing Page Template (Open Source)
+
+This is an open-source, production-ready landing page template built with Next.js 14, Tailwind CSS, and Framer Motion. It is designed for rapid customization and easy deployment for any SaaS, startup, or personal project.
+
+- **Live Template Demo:** https://builtit-dev.github.io/builtit-template/
+- **Original Inspiration:** https://builtit.dev (the commercial site this template is based on)
+
+---
+
+## ✨ Features
+- Modern, dark-mode design system
+- Fully responsive and mobile-first
+- Component-based architecture for easy customization
+- Framer Motion for premium animations
+- SEO-ready with proper metadata and OG image handling
+- Anti-scraping email protection (client-side assembly)
+- Example backend integrations (Cloudflare Worker & Google Apps Script)
+
+---
+
+## 🗂️ Project Structure
+```
+/app                      # Main Next.js app (App Router)
+/components               # Reusable UI components
+/public                   # Static assets (images, OG, favicon, etc.)
+/backend                  # Example backend code (see below)
+/lib                      # Utility libraries (analytics, etc.)
+```
+
+---
+
+## 🧩 Main Sections & Components
+- **Header**: Responsive navigation, mobile menu, CTA
+- **Hero**: Animated background, headline, subheadline, CTA
+- **Feature Sections**: Advantages, process, testimonials
+- **Portfolio/Case Studies**: Example project cards and detail pages
+- **Contact Page**: Professional form, Calendly integration, validation
+- **Footer**: Social links, anti-scraping email, legal links
+
+---
+
+## ⚙️ Example Backend Integrations
+This template includes anonymized backend code for handling contact form submissions:
+
+### 1. `/backend/cloudflare-worker`
+- **index.js**: Cloudflare Worker proxy for secure form submission and CORS handling. Replace placeholders with your own domains and script URLs before deploying.
+
+### 2. `/backend/google-apps-script`
+- **contact-form.gs**: Google Apps Script to receive POSTs, write to Google Sheets, and send notification emails. All sensitive info is replaced with placeholders—fill in your own values before use.
+
+See each subfolder's README for setup instructions.
+
+---
+
+## 🚀 Getting Started
+```bash
+npm install
+npm run dev
+```
+Visit [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🛠️ Customization
+- Edit content in `/app` and `/components` to match your brand and offering.
+- Update images and OG assets in `/public`.
+- Adjust colors, fonts, and breakpoints in `tailwind.config.js`.
+- Swap out or extend backend integrations as needed for your stack.
+
+---
+
+## 📦 Deployment
+Deploy easily to Vercel, Netlify, Cloudflare Pages, or any Next.js-compatible host.
+
+---
+
+## 🙏 Credits & License
+- This template is open source and free to use.
+- Inspired by and forked from the commercial site [builtit.dev](https://builtit.dev).
+- See LICENSE for details (add your license file if needed).
+
+---
+
+Enjoy building with this template! If you use it, a star or PR is always appreciated.
+
 
 ## May 2025 Security, Analytics & SEO Upgrades
 
@@ -226,6 +310,24 @@ npm run dev
 - Visit [http://localhost:3000](http://localhost:3000)
 
 ### Deploying & Updating Backend
+
+This repository includes two example backend scripts for handling contact form submissions and proxying requests securely:
+
+### 1. `/backend/cloudflare-worker`
+- **File:** `index.js`
+- **Purpose:** Cloudflare Worker code for securely proxying contact form submissions to your Google Apps Script endpoint, with CORS handling and origin validation.
+- **Security:** All real origins and script URLs are replaced with clear placeholders. Update `ALLOWED_ORIGINS` and `GOOGLE_APPS_SCRIPT_URL` with your own values before deploying.
+- **Usage:** Deploy as a Cloudflare Worker. Update placeholders for your production domains and script endpoint.
+
+### 2. `/backend/google-apps-script`
+- **File:** `contact-form.gs`
+- **Purpose:** Google Apps Script code to receive POST requests from the contact form, write submissions to a Google Sheet, and send a notification email.
+- **Security:** All sensitive values (spreadsheet ID, sheet name, email recipient) are replaced with placeholders. Fill in your own values before use.
+- **Usage:** Deploy as a Google Apps Script Web App. Replace all placeholder values with your actual Google Sheet and email information.
+
+**Note:**
+- All backend code is anonymized and safe for open source sharing.
+- See the README files in each backend subfolder for more specific setup instructions.
 - Update Cloudflare Worker via dashboard or Wrangler
 - Update Google Apps Script via script editor and redeploy
 - Update allowed origins for CORS as needed
