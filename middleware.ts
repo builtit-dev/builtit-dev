@@ -1,3 +1,7 @@
+// NOTE: Middleware is disabled because it's not compatible with Next.js static export (output: export)
+// See: https://nextjs.org/docs/advanced-features/static-html-export
+
+/*
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
@@ -19,14 +23,7 @@ export function middleware(request: NextRequest) {
 // Match all request paths except for API routes, static files, etc.
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public folder files
-     */
     '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.*\\.png$|.*\\.jpg$|.*\\.svg$).*)',
   ],
 }
+*/
