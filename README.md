@@ -282,7 +282,7 @@ components/
 - Logs all steps for debugging (see "Executions" in Apps Script editor)
 
 ### CORS
-- Worker allows origins: `https://builtit.dev`, `https://www.builtit.dev`, `http://localhost:3000`
+
 - Apps Script URL is only accessible via the worker
 
 ### Troubleshooting
