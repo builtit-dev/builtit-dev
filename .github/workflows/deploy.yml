@@ -29,22 +29,14 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: npm ci
-      - name: Verify next.config.js
-        run: cat next.config.js
-      - name: Copy all images to public directory
-        run: |
-          mkdir -p public/images/icons
-          find public -type f -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.svg" | xargs -I{} ls -la {}
       - name: Build with Next.js
         run: npm run build
       - name: Create .nojekyll file
         run: touch ./out/.nojekyll
-      - name: Fix asset paths
-        run: |
-          echo "Fixing asset paths in the build output..."
-          find ./out -type f -name "*.html" -exec grep -l "/_next/" {} \; | xargs -I{} echo "Found _next references in: {}"
-      - name: List output directory structure
-        run: find ./out -type f | sort
+      - name: Verify CNAME file
+        run: ls -la ./out/CNAME || echo "CNAME file should be present in the output directory"
+      - name: List output directory
+        run: ls -la ./out
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

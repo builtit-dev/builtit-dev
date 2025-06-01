@@ -6,8 +6,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 
-// Helper function to determine if we're in development or production
-// Removed as we now use getBasePath utility
+
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -22,22 +21,15 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Handle paths differently in development vs production
-  // Get basePath from utility function
-  const basePath = '/builtit-template'
-  
-  // In development, pathname won't have basePath
-  // In production with static export, it will include basePath
-  const normalizedPath = pathname.replace('/builtit-template', '')
-  const isContactPage = normalizedPath === '/contact' || normalizedPath === '/contact/'
+  const isContactPage = pathname === '/contact' || pathname === '/contact/'
   
   // Navigation items with proper routing logic
   const navItems = [
-    { name: 'Home', href: `${basePath}/`, isHome: true },
-    { name: 'Portfolio', href: `${basePath}/#recent-launches`, isHashLink: true },
-    { name: 'Reviews', href: `${basePath}/#reviews`, isHashLink: true },
-    { name: 'Pricing', href: `${basePath}/#pricing`, isHashLink: true },
-    { name: 'Contact', href: `${basePath}/contact/`, isContactLink: true }
+    { name: 'Home', href: `/`, isHome: true },
+    { name: 'Portfolio', href: `/#recent-launches`, isHashLink: true },
+    { name: 'Reviews', href: `/#reviews`, isHashLink: true },
+    { name: 'Pricing', href: `/#pricing`, isHashLink: true },
+    { name: 'Contact', href: `/contact/`, isContactLink: true }
   ]
 
   // Filter out Contact item when on contact page
@@ -46,7 +38,7 @@ export default function Header() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, item: typeof navItems[0]) => {
     // For home link on any page, navigate to home and scroll to top
     if (item.isHome) {
-      if (normalizedPath === '/') {
+      if (pathname === '/') {
         // If already on home page, just scroll to top
         e.preventDefault()
         window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -58,7 +50,7 @@ export default function Header() {
     if (item.isHashLink) {
       const targetId = item.href.split('#')[1]
       
-      if (normalizedPath === '/') {
+      if (pathname === '/') {
         // If on home page, scroll to section directly
         e.preventDefault()
         const targetElement = document.getElementById(targetId)
@@ -88,9 +80,9 @@ export default function Header() {
             transition={{ duration: 0.6 }}
             className="flex items-center"
           >
-            <Link href={`${basePath}/`} className="group">
+            <Link href={`/`} className="group">
               <img 
-                src="/builtit-template/images/full logo.svg" 
+                src="/builtit-dev/images/full-logo.svg" 
                 alt="BuiltIt.dev Logo" 
                 className="h-9 w-auto transition-all duration-200 group-hover:opacity-80 group-hover:scale-105"
               />
@@ -130,7 +122,7 @@ export default function Header() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             {!isContactPage && (
-              <Link href={`${basePath}/contact/`}>
+              <Link href={`/contact/`}>
                 <motion.button
                   className="group relative px-8 py-3 bg-white rounded-full transition-all duration-500 overflow-hidden shadow-md hover:shadow-xl"
                   whileHover={{ scale: 1.05 }}
@@ -209,7 +201,7 @@ export default function Header() {
               ))}
               <div className="pt-2 w-full flex justify-center">
                 {!isContactPage && (
-                  <Link href={`${basePath}/contact/`}>
+                  <Link href={`/contact/`}>
                     <motion.button
                       className="group relative px-6 py-2.5 bg-white rounded-full transition-all duration-500 overflow-hidden shadow-md hover:shadow-xl w-auto min-w-[140px]"
                       whileHover={{ scale: 1.05 }}

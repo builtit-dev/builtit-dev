@@ -19,21 +19,21 @@ const processSteps: ProcessStep[] = [
     phase: "Phase 1",
     title: "Strategize & Blueprint",
     description: "PM-led discovery to define your core problem, target users, and success metrics. We craft a clear strategic roadmap and a focused MVP blueprint.",
-    iconPath: "/images/icons/Neon Magnifier with Network Design.png"
+    iconPath: "/builtit-dev/images/icons/neon-magnifier-with-network-design.png"
   },
   {
     id: 2,
     phase: "Phase 2", 
     title: "Build & Iterate",
     description: "Rapid Next.js development of your core features. You get daily Loom updates, ensuring transparency and alignment as your AI-ready MVP takes shape.",
-    iconPath: "/images/icons/Magenta Code Icon on Navy Background.png"
+    iconPath: "/builtit-dev/images/icons/magenta-code-icon-on-navy-background.png"
   },
   {
     id: 3,
     phase: "Phase 3",
     title: "Launch & Validate", 
     description: "Smooth deployment of your MVP. We provide initial support and help you gather crucial user feedback to inform your next steps and drive validation.",
-    iconPath: "/images/icons/Magenta Rocket in Flight.png"
+    iconPath: "/builtit-dev/images/icons/magenta-rocket-in-flight.png"
   }
 ]
 
@@ -62,7 +62,7 @@ const stepVariants = {
 }
 
 export default function ProcessSection() {
-  const basePath = '/builtit-template'
+  const basePath = '/builtit-dev'
   return (
     <section id="process" className="relative py-12 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6">
@@ -130,7 +130,7 @@ export default function ProcessSection() {
                       }}
                     >
                       <Image
-                        src={`/builtit-template${step.iconPath}`}
+                        src={step.iconPath}
                         alt={step.title}
                         width={index === 1 ? 80 : 75} 
                         height={index === 1 ? 80 : 75}

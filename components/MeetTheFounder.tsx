@@ -93,7 +93,7 @@ const MeetTheFounder = () => {
                 
                 <div className="relative z-10 w-80 h-80 lg:w-96 lg:h-96 rounded-xl overflow-hidden">
                   <Image
-                    src="/builtit-template/images/icons/founder.jpeg"
+                    src="/builtit-dev/images/icons/founder.jpeg"
                     alt="Lyor Itzhaki - Founder & PM"
                     width={384}
                     height={384}

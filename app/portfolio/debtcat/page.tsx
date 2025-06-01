@@ -4,9 +4,6 @@ import Link from 'next/link'
 import Footer from '@/components/Footer'
 import PortfolioNavButtons from '@/components/PortfolioNavButtons'
 
-// Use hardcoded basePath for GitHub Pages deployment
-const basePath = '/builtit-template'
-
 export default function DebtCatCaseStudy() {
   return (
     <div className="min-h-screen bg-[var(--bg-primary-dark)]">
@@ -14,7 +11,7 @@ export default function DebtCatCaseStudy() {
       <nav className="border-b border-[var(--border-subtle)] bg-[var(--bg-secondary-dark)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link href={`${basePath}/#recent-launches`} className="flex items-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
+            <Link href={`/#recent-launches`} className="flex items-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
               ← Back to Portfolio
             </Link>
           </div>
@@ -42,7 +39,7 @@ export default function DebtCatCaseStudy() {
           </div>
           <div className="relative w-full max-w-4xl mx-auto mb-8">
             <Image
-              src={`${basePath}/images/icons/debtcat_1.png`}
+              src={`/builtit-dev/images/icons/debtcat_1.png`}
               alt="DebtCat landing page showing the main homepage"
               width={1200}
               height={600}
@@ -136,7 +133,7 @@ export default function DebtCatCaseStudy() {
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>
               <Image
-                src={`${basePath}/images/icons/dispute_options.png`}
+                src={`/builtit-dev/images/icons/dispute_options.png`}
                 alt="DebtCat dispute options interface"
                 width={400}
                 height={300}
@@ -148,7 +145,7 @@ export default function DebtCatCaseStudy() {
             </div>
             <div>
               <Image
-                src={`${basePath}/images/icons/debtcat_chat.png`}
+                src="/builtit-dev/images/icons/debtcat_chat.png"
                 alt="DebtCat AI chat interface"
                 width={400}
                 height={300}
@@ -162,7 +159,7 @@ export default function DebtCatCaseStudy() {
 
           <div className="mb-8">
             <Image
-              src={`${basePath}/images/icons/debtcat_guides.png`}
+              src={`/builtit-dev/images/icons/debtcat_guides.png`}
               alt="DebtCat consumer guides"
               width={800}
               height={400}
@@ -461,7 +458,7 @@ export default function DebtCatCaseStudy() {
             Let's discuss how strategic product thinking combined with rapid development can bring your vision to life in 14 days.
           </p>
           <Link
-            href={`${basePath}/contact`}
+            href={`/contact/`}
             className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl group relative overflow-hidden"
             style={{ 
               background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%)',
