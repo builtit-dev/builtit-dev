@@ -5,9 +5,9 @@ const nextConfig = {
     unoptimized: true,
   },
   // Set the base path for both development and production
-  basePath: '/ui-kit',
+  basePath: '/builtit-template',
   // Set the asset prefix for both development and production
-  assetPrefix: '/ui-kit',
+  assetPrefix: '/builtit-template',
   // Ensure trailing slashes for GitHub Pages compatibility
   trailingSlash: true,
   // Disable image optimization for static export

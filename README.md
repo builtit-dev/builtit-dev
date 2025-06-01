@@ -2,7 +2,7 @@
 
 This is an open-source, production-ready landing page template built with Next.js 14, Tailwind CSS, and Framer Motion. It is designed for rapid customization and easy deployment for any SaaS, startup, or personal project.
 
-- **Live Template Demo:** https://builtit-dev.github.io/ui-kit/
+- **Live Template Demo:** https://builtit-dev.github.io/builtit-template/
 - **Original Inspiration:** https://builtit.dev (the commercial site this template is based on)
 
 ---
