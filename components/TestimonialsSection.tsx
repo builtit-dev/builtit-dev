@@ -121,7 +121,7 @@ export default function TestimonialsSection() {
       <div className="flex justify-center mb-6">
         <span className="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-accent-primary via-accent-secondary to-accent-primary block">
           <img 
-            src={`/builtit-template${testimonial.image}`} 
+            src={`/builtit-dev${testimonial.image}`} 
             alt={`${testimonial.author} avatar`} 
             className="w-full h-full rounded-full object-cover bg-bg-card"
           />

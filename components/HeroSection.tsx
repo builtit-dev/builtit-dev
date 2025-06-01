@@ -1,9 +1,12 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion'
 
 export default function HeroSection() {
+  const router = useRouter();
   useEffect(() => {
     // Any initialization code can go here
   }, [])
@@ -11,7 +14,7 @@ export default function HeroSection() {
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault()
     // Navigate to contact page
-    window.location.href = '/contact'
+    router.push('/contact/')
   }
 
   return (
@@ -216,8 +219,8 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
             {/* Primary CTA - Contact Page */}
-            <motion.a
-              href="/contact"
+            <Link href="/contact/" legacyBehavior passHref>
+              <motion.a
               className="group relative px-10 py-5 rounded-xl font-semibold text-lg overflow-hidden min-w-[260px] text-center block"
               style={{
                 background: 'linear-gradient(135deg, var(--accent-primary) 0%, #9A1FFF 100%)',
@@ -235,7 +238,8 @@ export default function HeroSection() {
               <div 
                 className="absolute top-0 left-0 w-full h-full opacity-0 group-hover:opacity-100 transition-all duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -translate-x-full group-hover:translate-x-full"
               />
-            </motion.a>
+                        </motion.a>
+            </Link>
 
             {/* Secondary CTA - Contact Us */}
             <motion.button

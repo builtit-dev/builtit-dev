@@ -17,37 +17,37 @@ const advantages: Advantage[] = [
     id: 'pm-strategy',
     title: 'PM-Led Product Strategy',
     description: 'More than just code. Every MVP is built on a foundation of rigorous product strategy led by a 6+ year SaaS PM, ensuring we solve the right problem for the right users.',
-    iconPath: '/images/icons/Neon Brainstorm Symbol.png'
+    iconPath: '/builtit-dev/images/icons/neon-brainstorm-symbol.png'
   },
   {
     id: 'nextjs-production',
     title: 'Production-Grade Next.js',
     description: 'Clean, scalable, and performant applications built with modern Next.js best practices by a developer who understands product lifecycles.',
-    iconPath: '/images/icons/Neon _N_ Hexagonal Icon.png'
+    iconPath: '/builtit-dev/images/icons/neon-n-hexagonal-icon.png'
   },
   {
     id: 'ai-ready',
     title: 'Architected for AI',
     description: 'We build your MVP with an AI-first mindset, creating a flexible foundation that\'s ready for intelligent features, now or as you scale.',
-    iconPath: '/images/icons/Glowing Neural Network Connection.png'
+    iconPath: '/builtit-dev/images/icons/glowing-neural-network-connection.png'
   },
   {
     id: 'transparent-process',
     title: 'Transparent Process, Daily Looms',
     description: 'No black boxes. You get daily video updates and direct access, ensuring you\'re informed and involved every step of the way.',
-    iconPath: '/images/icons/Neon Play Window Illustration.png'
+    iconPath: '/builtit-dev/images/icons/neon-play-window-illustration.png'
   },
   {
     id: 'dedicated-lead',
     title: 'One Dedicated Lead: PM & Developer',
     description: 'Streamlined decisions and total accountability. Your founder, Lyor, is your single point of contact for both product strategy and technical execution.',
-    iconPath: '/images/icons/Arrow Hitting Bullseye Icon.png'
+    iconPath: '/builtit-dev/images/icons/arrow-hitting-bullseye-icon.png'
   },
   {
     id: 'predictable-investment',
     title: 'Predictable Investment',
     description: 'We focus on clear scopes and efficient sprints, offering transparent starting points that lead to a fixed proposal. No surprise hourly bills.',
-    iconPath: '/images/icons/Price Tag Document Icon.png'
+    iconPath: '/builtit-dev/images/icons/price-tag-document-icon.png'
   }
 ]
 
@@ -76,7 +76,7 @@ const cardVariants = {
 }
 
 const BuiltItAdvantage = () => {
-  const basePath = '/builtit-template'
+  const basePath = '/builtit-dev'
   return (
     <section id="advantage" className="relative py-20 lg:py-24 overflow-hidden">
       {/* Background Elements */}
@@ -126,7 +126,7 @@ const BuiltItAdvantage = () => {
                   {/* Icon */}
                   <div className="flex items-center justify-center mb-8">
                     <Image
-                      src={`/builtit-template${advantage.iconPath}`}
+                      src={advantage.iconPath}
                       alt={advantage.title}
                       width={112}
                       height={112}

@@ -25,7 +25,7 @@ const tiltWarp = Tilt_Warp({
 
 export const metadata: Metadata = {
   // Ensure this metadataBase is used for all URLs
-  metadataBase: new URL('https://builtit.dev'),
+  metadataBase: new URL('https://builtit-dev.github.io/builtit-dev'),
   title: {
     default: 'BuiltIt.dev - AI-Ready MVPs. Expertly Shipped.',
     template: '%s | BuiltIt.dev'
@@ -67,13 +67,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://builtit.dev',
+    url: 'https://builtit-dev.github.io/builtit-dev',
     title: 'BuiltIt.dev - AI-Ready MVPs. Expertly Shipped.',
     description: 'Transform your startup idea into a production-ready AI MVP in just 14 days. Expert development, strategic thinking, and rapid execution.',
     siteName: 'BuiltIt.dev',
     images: [
       {
-        url: 'https://builtit.dev/og-image.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'BuiltIt.dev - AI-Ready MVPs. Expertly Shipped.',
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     title: 'BuiltIt.dev - AI-Ready MVPs. Expertly Shipped.',
     description: 'Transform your startup idea into a production-ready AI MVP in just 14 days. Expert development, strategic thinking, and rapid execution.',
     creator: '@builtitdev',
-    images: ['https://builtit.dev/og-image.png'],
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -101,7 +101,7 @@ export const metadata: Metadata = {
   },
   // The canonical URL is set dynamically via middleware for each page
   alternates: {
-    canonical: 'https://builtit.dev',
+    canonical: 'https://builtit-dev.github.io/builtit-dev',
   },
   category: 'technology',
 }
@@ -117,8 +117,8 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "BuiltIt.dev",
     "alternateName": "BuiltIt",
-    "url": "https://builtit.dev",
-    "logo": "https://builtit.dev/favicon-512x512.png",
+    "url": "https://builtit-dev.github.io/builtit-dev",
+    "logo": "/favicon-512x512.png",
     "description": "Transform your startup idea into a production-ready AI MVP in just 14 days. Expert development, strategic thinking, and rapid execution.",
     "foundingDate": "2024",
     "sameAs": [

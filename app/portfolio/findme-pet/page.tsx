@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import PortfolioNavButtons from '@/components/PortfolioNavButtons'
 
 // Use hardcoded basePath for GitHub Pages deployment
-const basePath = '/builtit-template'
+const basePath = '/builtit-dev'
 
 export default function FindMePetCaseStudy() {
   return (

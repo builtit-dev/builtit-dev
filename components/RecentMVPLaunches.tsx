@@ -65,7 +65,7 @@ const cardVariants = {
 }
 
 const RecentMVPLaunches = () => {
-  const basePath = '/builtit-template'
+  const basePath = '/builtit-dev'
   return (
     <section id="recent-launches" className="relative py-12 lg:py-24 overflow-hidden mb-24 sm:mb-32 lg:mb-0 scroll-mt-32">
       {/* Background Elements */}

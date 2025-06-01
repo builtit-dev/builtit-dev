@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion'
 
 interface PricingTier {
@@ -347,8 +348,8 @@ export default function PricingSection() {
 
                   {/* CTA Button - Always at bottom */}
                   <div className="mt-auto">
-                    <motion.a
-                      href="/contact"
+                    <Link href="/contact/" legacyBehavior passHref>
+                      <motion.a
                       className={`w-full py-4 px-6 rounded-xl font-semibold text-base transition-all duration-500 ease-out group relative overflow-hidden text-center min-h-[48px] flex items-center justify-center ${
                         tier.enterprise
                           ? 'bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 hover:border-emerald-500/40 hover:-translate-y-0.5'
@@ -371,7 +372,8 @@ export default function PricingSection() {
                           className="absolute top-0 left-0 w-full h-full opacity-0 group-hover:opacity-100 transition-all duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -translate-x-full group-hover:translate-x-full"
                         />
                       )}
-                    </motion.a>
+                                        </motion.a>
+                    </Link>
                   </div>
                 </div>
               </div>

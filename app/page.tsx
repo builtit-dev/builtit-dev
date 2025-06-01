@@ -14,6 +14,7 @@ import TestimonialsSection from '../components/TestimonialsSection'
 import MeetTheFounder from '../components/MeetTheFounder'
 import PricingSection from '../components/PricingSection'
 import Footer from '../components/Footer'
+import Image from 'next/image' // Import Next.js Image component
 
 // Structured data for homepage
 const structuredData = {
@@ -52,7 +53,6 @@ const structuredData = {
 }
 
 export default function Home() {
-  const basePath = '/builtit-template'
   const handleCalendlyClick = () => {
     // @ts-ignore - Calendly is loaded dynamically
     if (typeof window !== 'undefined' && window.Calendly) {
@@ -90,6 +90,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+
       <Header />
       <main className="min-h-screen">
         <HeroSection />
@@ -134,7 +135,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               {/* Primary CTA - Contact Page */}
               <motion.a
-                href={`${basePath}/contact`}
+                href={`/contact/`}
                 className="group relative px-10 py-5 rounded-xl font-semibold text-lg overflow-hidden text-center flex items-center justify-center transition-all duration-300 w-full sm:w-auto"
                 style={{
                   background: 'linear-gradient(135deg, var(--accent-primary) 0%, #9A1FFF 100%)',
@@ -156,7 +157,7 @@ export default function Home() {
 
               {/* Secondary CTA - Contact Us */}
               <a
-                href={`${basePath}/contact`}
+                href={`/contact/`}
                 className="group relative flex items-center justify-center px-10 py-5 font-semibold text-lg rounded-xl transition-all duration-300 overflow-hidden w-full sm:w-auto"
                 style={{
                   background: 'rgba(0, 0, 0, 0.3)',
