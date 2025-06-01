@@ -4,6 +4,9 @@ import Link from 'next/link'
 import Footer from '@/components/Footer'
 import PortfolioNavButtons from '@/components/PortfolioNavButtons'
 
+// Hardcoded basePath for GitHub Pages deployment
+const basePath = process.env.NODE_ENV === 'development' ? '' : '/builtit-template'
+
 export default function FindMePetCaseStudy() {
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
@@ -12,7 +15,7 @@ export default function FindMePetCaseStudy() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link 
-              href="/#recent-launches" 
+              href={`${basePath}/#recent-launches`} 
               className="flex items-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
             >
               ← Back to Portfolio
@@ -47,12 +50,13 @@ export default function FindMePetCaseStudy() {
         <div className="my-12 md:my-16">
           <div className="max-w-5xl mx-auto">
             <Image
-              src="/images/icons/finndmepet1.png"
+              src="/builtit-template/images/shasta_main.png"
               alt="FindMe.pet landing page featuring Shasta, the inspiration behind the project"
               width={1200}
               height={600}
               className="w-full h-auto rounded-2xl shadow-2xl border border-[var(--border-subtle)]"
               priority
+              unoptimized
             />
             <p className="text-center text-[var(--text-muted)] mt-4 italic">
               The FindMe.pet landing page featuring Shasta, Lyor's adopted dog and inspiration for the project
@@ -146,7 +150,7 @@ export default function FindMePetCaseStudy() {
               {/* Results Page */}
               <div className="space-y-6">
                 <Image
-                  src="/images/icons/results_page-1.png"
+                  src={`${basePath}/images/icons/results_page-1.png`}
                   alt="AI-powered results page showing pet recommendations with compatibility metrics"
                   width={1200}
                   height={800}
@@ -161,7 +165,7 @@ export default function FindMePetCaseStudy() {
               {/* Pet Details Page */}
               <div className="space-y-6">
                 <Image
-                  src="/images/icons/pet_details.png"
+                  src={`${basePath}/images/icons/pet_details.png`}
                   alt="Comprehensive pet details page with adoption information"
                   width={1200}
                   height={800}
@@ -381,7 +385,7 @@ export default function FindMePetCaseStudy() {
               Let's discuss how strategic product thinking combined with rapid development can bring your vision to life in 14 days.
             </p>
             <Link
-              href="/contact"
+              href={`${basePath}/contact`}
               className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl group relative overflow-hidden"
               style={{ 
                 background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%)',

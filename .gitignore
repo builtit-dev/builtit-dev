@@ -5,7 +5,7 @@ node_modules/
 .next/
 
 # Build output
-#out/
+out/
 
 # Debug logs
 npm-debug.log*

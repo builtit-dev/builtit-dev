@@ -123,7 +123,7 @@ export default function PricingSection() {
   }
 
   return (
-    <section id="pricing" className="relative py-20 lg:py-24 overflow-hidden">
+    <section id="pricing" className="relative py-20 lg:py-24 overflow-hidden scroll-mt-32">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-bg-secondary/50 to-bg-primary" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gradient-radial from-accent-primary/10 via-accent-secondary/5 to-transparent rounded-full blur-3xl" />

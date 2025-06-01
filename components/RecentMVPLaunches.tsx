@@ -3,6 +3,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
+import { getBasePath } from '@/lib/utils'
 
 interface MVPProject {
   id: string
@@ -24,7 +26,7 @@ const mvpProjects: MVPProject[] = [
     pillTag: 'AI & Matching Platform',
     pillColor: 'secondary',
     ctaLink: '/portfolio/findme-pet',
-    imagePlaceholder: '/images/icons/finndmepet1.png'
+    imagePlaceholder: '/images/shasta_main.png'
   },
   {
     id: 'debtcat',
@@ -34,7 +36,7 @@ const mvpProjects: MVPProject[] = [
     pillTag: 'Fintech & Consumer Rights',
     pillColor: 'primary',
     ctaLink: '/portfolio/debtcat',
-    imagePlaceholder: '/images/icons/debtcat1.png'
+    imagePlaceholder: '/images/debtcat_1.png'
   }
 ]
 
@@ -63,8 +65,9 @@ const cardVariants = {
 }
 
 const RecentMVPLaunches = () => {
+  const basePath = getBasePath()
   return (
-    <section id="recent-launches" className="relative py-12 lg:py-24 overflow-hidden mb-24 sm:mb-32 lg:mb-0">
+    <section id="recent-launches" className="relative py-12 lg:py-24 overflow-hidden mb-24 sm:mb-32 lg:mb-0 scroll-mt-32">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-bg-primary to-bg-secondary/30" />
       <div className="absolute top-1/3 left-1/4 w-[700px] h-[500px] bg-gradient-radial from-accent-primary/6 via-accent-secondary/3 to-transparent rounded-full blur-3xl" />
@@ -104,20 +107,12 @@ const RecentMVPLaunches = () => {
             >
               {/* Card is now a single unit without external elements */}
 
-              <motion.a
-                href={project.ctaLink}
-                className="relative block h-full rounded-3xl overflow-hidden transition-all duration-700 ease-out cursor-pointer group"
-                style={{
+              <Link href={`/portfolio/${project.id}`} className="relative block h-full rounded-3xl overflow-hidden transition-all duration-700 ease-out cursor-pointer group" style={{
                   background: 'linear-gradient(135deg, rgba(35, 35, 35, 0.9) 0%, rgba(25, 25, 25, 0.8) 50%, rgba(20, 20, 20, 0.7) 100%)',
                   border: '1px solid rgba(255, 255, 255, 0.08)',
                   backdropFilter: 'blur(20px)'
-                }}
-                whileHover={{
-                  y: -12,
-                  scale: 1.02,
-                  transition: { duration: 0.4, ease: [0.23, 1, 0.32, 1] }
-                }}
-              >
+                }}>
+                <div className="relative">
                 {/* Enhanced Inner Glow Effect */}
                 <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" 
                      style={{
@@ -163,11 +158,12 @@ const RecentMVPLaunches = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/5 via-transparent to-accent-secondary/5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     
                     <Image
-                      src={project.imagePlaceholder}
+                      src={`/builtit-template${project.imagePlaceholder}`}
                       alt={`${project.title} screenshot`}
                       fill
                       className="object-cover transition-all duration-1000 ease-out group-hover:scale-115 group-hover:brightness-110"
                       sizes="(max-width: 768px) 100vw, 50vw"
+                      unoptimized
                     />
                     
                     {/* Enhanced multi-layer shine effect */}
@@ -223,7 +219,8 @@ const RecentMVPLaunches = () => {
                     </div>
                   </div>
                 </div>
-              </motion.a>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

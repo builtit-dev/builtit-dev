@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { getBasePath } from '@/lib/utils'
 
 interface ProcessStep {
   id: number
@@ -61,6 +62,7 @@ const stepVariants = {
 }
 
 export default function ProcessSection() {
+  const basePath = getBasePath()
   return (
     <section id="process" className="relative py-12 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6">
@@ -128,7 +130,7 @@ export default function ProcessSection() {
                       }}
                     >
                       <Image
-                        src={step.iconPath}
+                        src={`/builtit-template${step.iconPath}`}
                         alt={step.title}
                         width={index === 1 ? 80 : 75} 
                         height={index === 1 ? 80 : 75}
@@ -191,7 +193,7 @@ export default function ProcessSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <a 
-            href="/contact"
+            href={`${basePath}/contact/`}
             className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-accent-primary to-accent-primary/80 hover:from-accent-primary/90 hover:to-accent-primary/70 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent-primary/25 overflow-hidden"
           >
             <span className="relative z-10">Start Your 14-Day Sprint</span>

@@ -4,6 +4,7 @@ import React from 'react'
 import Script from 'next/script'
 import { motion } from 'framer-motion'
 import Header from '../components/Header'
+import { getBasePath } from '@/lib/utils'
 import HeroSection from '../components/HeroSection'
 import ProcessSection from '../components/ProcessSection'
 import BuiltItAdvantage from '../components/BuiltItAdvantage'
@@ -51,6 +52,7 @@ const structuredData = {
 }
 
 export default function Home() {
+  const basePath = getBasePath()
   const handleCalendlyClick = () => {
     // @ts-ignore - Calendly is loaded dynamically
     if (typeof window !== 'undefined' && window.Calendly) {
@@ -58,6 +60,28 @@ export default function Home() {
       window.Calendly.initPopupWidget({ url: 'https://calendly.com/lyor-builtit/30min' })
     }
   }
+  
+  // Handle scrolling to section when navigating from another page
+  React.useEffect(() => {
+    const handleScrollToSection = () => {
+      const sectionId = sessionStorage.getItem('scrollToSection')
+      if (sectionId) {
+        // Clear the stored section ID
+        sessionStorage.removeItem('scrollToSection')
+        
+        // Give the page a moment to fully render before scrolling
+        setTimeout(() => {
+          const targetElement = document.getElementById(sectionId)
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' })
+          }
+        }, 100)
+      }
+    }
+    
+    // Run once when component mounts
+    handleScrollToSection()
+  }, [])
 
   return (
     <>
@@ -110,7 +134,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               {/* Primary CTA - Contact Page */}
               <motion.a
-                href="/contact"
+                href={`${basePath}/contact`}
                 className="group relative px-10 py-5 rounded-xl font-semibold text-lg overflow-hidden text-center flex items-center justify-center transition-all duration-300 w-full sm:w-auto"
                 style={{
                   background: 'linear-gradient(135deg, var(--accent-primary) 0%, #9A1FFF 100%)',
@@ -132,7 +156,7 @@ export default function Home() {
 
               {/* Secondary CTA - Contact Us */}
               <a
-                href="/contact"
+                href={`${basePath}/contact`}
                 className="group relative flex items-center justify-center px-10 py-5 font-semibold text-lg rounded-xl transition-all duration-300 overflow-hidden w-full sm:w-auto"
                 style={{
                   background: 'rgba(0, 0, 0, 0.3)',

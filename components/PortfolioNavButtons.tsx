@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { getBasePath } from '@/lib/utils'
 
 export default function PortfolioNavButtons() {
+  const basePath = getBasePath()
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function PortfolioNavButtons() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-start">
             <Link
-              href="/#recent-launches"
+              href={`${basePath}/#recent-launches`}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full transition-all duration-300 group backdrop-blur-md"
               style={{
                 background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%)',
@@ -53,7 +55,7 @@ export default function PortfolioNavButtons() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-              <span className="text-white text-sm font-medium whitespace-nowrap">← Back to Portfolio</span>
+              <span className="text-white text-sm font-medium whitespace-nowrap">Back to Portfolio</span>
             </Link>
           </div>
         </div>

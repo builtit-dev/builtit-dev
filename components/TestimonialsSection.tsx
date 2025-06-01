@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { getBasePath } from '@/lib/utils'
 
 interface Testimonial {
   id: number
@@ -68,8 +69,9 @@ const cardVariants = {
 }
 
 export default function TestimonialsSection() {
+  const basePath = getBasePath()
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="reviews" className="relative py-24 lg:py-32 overflow-hidden scroll-mt-32">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent-primary/5 rounded-full blur-3xl" />
@@ -87,7 +89,7 @@ export default function TestimonialsSection() {
           
           <h2 className="font-heading text-4xl lg:text-5xl xl:text-6xl font-bold text-text-primary mb-6">
             What Our{' '}
-            <div id="reviews" className="absolute -top-32 h-0 w-0 scroll-mt-32" aria-hidden="true" />
+            {/* Anchor point removed - ID now on main section */}
 <span className="text-gradient">Clients Say</span>
           </h2>
           
@@ -119,7 +121,7 @@ export default function TestimonialsSection() {
       <div className="flex justify-center mb-6">
         <span className="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-accent-primary via-accent-secondary to-accent-primary block">
           <img 
-            src={testimonial.image} 
+            src={`/builtit-template${testimonial.image}`} 
             alt={`${testimonial.author} avatar`} 
             className="w-full h-full rounded-full object-cover bg-bg-card"
           />
@@ -159,7 +161,7 @@ export default function TestimonialsSection() {
             Ready to join our success stories?
           </p>
           <a 
-            href="/contact"
+            href={`${basePath}/contact/`}
             className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-accent-primary to-accent-primary/80 hover:from-accent-primary/90 hover:to-accent-primary/70 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent-primary/25 overflow-hidden"
           >
             <span className="relative z-10">Start Your 14-Day Sprint</span>

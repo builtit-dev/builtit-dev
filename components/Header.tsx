@@ -4,6 +4,10 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import { getBasePath } from '@/lib/utils'
+
+// Helper function to determine if we're in development or production
+// Removed as we now use getBasePath utility
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -18,55 +22,59 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const isContactPage = pathname === '/contact'
-
+  // Handle paths differently in development vs production
+  // Get basePath from utility function
+  const basePath = getBasePath()
+  
+  // In development, pathname won't have basePath
+  // In production with static export, it will include basePath
+  const normalizedPath = pathname.replace('/builtit-template', '')
+  const isContactPage = normalizedPath === '/contact' || normalizedPath === '/contact/'
+  
   // Navigation items with proper routing logic
   const navItems = [
-    { 
-      name: 'Home', 
-      href: isContactPage ? '/' : '#',
-      isHome: true
-    },
-    { 
-      name: 'Portfolio', 
-      href: isContactPage ? '/#recent-launches' : '#recent-launches'
-    },
-    { 
-      name: 'Reviews', 
-      href: isContactPage ? '/#reviews' : '#reviews'
-    },
-    { 
-      name: 'Pricing', 
-      href: isContactPage ? '/#pricing' : '#pricing'
-    },
-    { 
-      name: 'Contact', 
-      href: '/contact'
-    }
+    { name: 'Home', href: `${basePath}/`, isHome: true },
+    { name: 'Portfolio', href: `${basePath}/#recent-launches`, isHashLink: true },
+    { name: 'Reviews', href: `${basePath}/#reviews`, isHashLink: true },
+    { name: 'Pricing', href: `${basePath}/#pricing`, isHashLink: true },
+    { name: 'Contact', href: `${basePath}/contact/`, isContactLink: true }
   ]
 
   // Filter out Contact item when on contact page
-  const filteredNavItems = navItems.filter(item => 
-    !(isContactPage && item.name === 'Contact')
-  )
+  const filteredNavItems = navItems.filter(item => !(isContactPage && item.name === 'Contact'))
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, item: typeof navItems[0]) => {
-    // For home link on homepage, scroll to top
-    if (!isContactPage && item.isHome) {
-      e.preventDefault()
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+    // For home link on any page, navigate to home and scroll to top
+    if (item.isHome) {
+      if (normalizedPath === '/') {
+        // If already on home page, just scroll to top
+        e.preventDefault()
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+      // Otherwise let normal navigation happen
     }
-    // For hash links on homepage, let default behavior handle smooth scroll
-    // For contact page links, navigation will happen normally
+    
+    // For hash links, handle differently based on current page
+    if (item.isHashLink) {
+      const targetId = item.href.split('#')[1]
+      
+      if (normalizedPath === '/') {
+        // If on home page, scroll to section directly
+        e.preventDefault()
+        const targetElement = document.getElementById(targetId)
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' })
+        }
+      } else {
+        // If on another page, add a session storage flag to scroll after navigation
+        sessionStorage.setItem('scrollToSection', targetId)
+      }
+    }
   }
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
-        isScrolled 
-          ? 'bg-bg-primary/95 backdrop-blur-md border-b border-border-subtle' 
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${isScrolled ? 'bg-bg-primary/95 backdrop-blur-md border-b border-border-subtle' : 'bg-transparent'}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -80,9 +88,9 @@ export default function Header() {
             transition={{ duration: 0.6 }}
             className="flex items-center"
           >
-            <Link href="/" className="group">
+            <Link href={`${basePath}/`} className="group">
               <img 
-                src="/images/full logo.svg" 
+                src="/builtit-template/images/full logo.svg" 
                 alt="BuiltIt.dev Logo" 
                 className="h-9 w-auto transition-all duration-200 group-hover:opacity-80 group-hover:scale-105"
               />
@@ -102,12 +110,11 @@ export default function Header() {
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item)}
                   className="relative text-text-secondary hover:text-text-primary transition-all duration-200 font-medium group"
+                  scroll={!item.isHashLink} // Disable automatic scrolling for hash links
                 >
                   <span className="relative z-10">{item.name}</span>
-                  
                   {/* Hover underline effect */}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-primary transition-all duration-300 group-hover:w-full" />
-                  
                   {/* Glow effect on hover */}
                   <span className="absolute inset-0 rounded-lg bg-accent-primary/0 group-hover:bg-accent-primary/10 transition-all duration-300 blur-xl" />
                 </Link>
@@ -123,29 +130,27 @@ export default function Header() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             {!isContactPage && (
-              <motion.button
-                className="group relative px-8 py-3 bg-white rounded-full transition-all duration-500 overflow-hidden shadow-md hover:shadow-xl"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = '/contact'}
-              >
-                {/* Purple splash fill effect from bottom */}
-                <div className="absolute inset-0 rounded-full">
-                  <div 
-                    className="absolute bottom-0 left-0 w-full h-0 bg-accent-primary rounded-full transition-all duration-500 ease-out group-hover:h-full"
-                  />
-                </div>
-                
-                {/* Text with color transition */}
-                <span className="relative z-10 text-black group-hover:text-white font-semibold transition-colors duration-300 delay-100">
-                  Start Building
-                </span>
-                
-                {/* Enhanced glow effect */}
-                <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 rounded-full bg-accent-primary/30 blur-xl animate-pulse" />
-                </div>
-              </motion.button>
+              <Link href={`${basePath}/contact/`}>
+                <motion.button
+                  className="group relative px-8 py-3 bg-white rounded-full transition-all duration-500 overflow-hidden shadow-md hover:shadow-xl"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  type="button"
+                >
+                  {/* Purple splash fill effect from bottom */}
+                  <div className="absolute inset-0 rounded-full">
+                    <div 
+                      className="absolute bottom-0 left-0 w-full h-0 bg-accent-primary rounded-full transition-all duration-500 ease-out group-hover:h-full"
+                    />
+                  </div>
+                  <span className="relative z-10 text-black group-hover:text-white font-semibold transition-colors duration-300 delay-100">
+                    Start Building
+                  </span>
+                  <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-0 rounded-full bg-accent-primary/30 blur-xl animate-pulse" />
+                  </div>
+                </motion.button>
+              </Link>
             )}
           </motion.div>
 
@@ -157,6 +162,7 @@ export default function Header() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             whileTap={{ scale: 0.9 }}
+            type="button"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMobileMenuOpen ? (
@@ -196,31 +202,28 @@ export default function Header() {
                     handleNavClick(e, item)
                     setIsMobileMenuOpen(false)
                   }}
+                  scroll={!item.isHashLink} // Disable automatic scrolling for hash links
                 >
                   {item.name}
                 </Link>
               ))}
               <div className="pt-2 w-full flex justify-center">
                 {!isContactPage && (
-                  <Link href="/contact">
+                  <Link href={`${basePath}/contact/`}>
                     <motion.button
                       className="group relative px-6 py-2.5 bg-white rounded-full transition-all duration-500 overflow-hidden shadow-md hover:shadow-xl w-auto min-w-[140px]"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      type="button"
                     >
-                      {/* Purple splash fill effect from bottom */}
                       <div className="absolute inset-0 rounded-full">
                         <div 
                           className="absolute bottom-0 left-0 w-full h-0 bg-accent-primary rounded-full transition-all duration-500 ease-out group-hover:h-full"
                         />
                       </div>
-                      
-                      {/* Text with color transition */}
                       <span className="relative z-10 text-black group-hover:text-white font-semibold transition-colors duration-300 delay-100">
                         Start Building
                       </span>
-                      
-                      {/* Enhanced glow effect */}
                       <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <div className="absolute inset-0 rounded-full bg-accent-primary/30 blur-xl animate-pulse" />
                       </div>

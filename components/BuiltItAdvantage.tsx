@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { getBasePath } from '@/lib/utils'
 
 interface Advantage {
   id: string
@@ -75,6 +76,7 @@ const cardVariants = {
 }
 
 const BuiltItAdvantage = () => {
+  const basePath = getBasePath()
   return (
     <section id="advantage" className="relative py-20 lg:py-24 overflow-hidden">
       {/* Background Elements */}
@@ -124,7 +126,7 @@ const BuiltItAdvantage = () => {
                   {/* Icon */}
                   <div className="flex items-center justify-center mb-8">
                     <Image
-                      src={advantage.iconPath}
+                      src={`/builtit-template${advantage.iconPath}`}
                       alt={advantage.title}
                       width={112}
                       height={112}
