@@ -7,9 +7,11 @@ const nextConfig = {
     unoptimized: true,
   },
   // Set the base path for GitHub Pages deployment
-  basePath: process.env.NODE_ENV === 'production' ? '/builtit-template' : '',
+  basePath: '/builtit-template',
   // Disable server-side image optimization for static export
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/builtit-template' : '',
+  assetPrefix: '/builtit-template',
+  // Ensure trailing slashes for GitHub Pages compatibility
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
