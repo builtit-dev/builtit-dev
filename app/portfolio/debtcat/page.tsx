@@ -4,8 +4,8 @@ import Link from 'next/link'
 import Footer from '@/components/Footer'
 import PortfolioNavButtons from '@/components/PortfolioNavButtons'
 
-// Hardcoded basePath for GitHub Pages deployment
-const basePath = process.env.NODE_ENV === 'development' ? '' : '/builtit-template'
+// Use hardcoded basePath for GitHub Pages deployment
+const basePath = '/builtit-template'
 
 export default function DebtCatCaseStudy() {
   return (
@@ -42,7 +42,7 @@ export default function DebtCatCaseStudy() {
           </div>
           <div className="relative w-full max-w-4xl mx-auto mb-8">
             <Image
-              src="/builtit-template/images/debtcat_1.png"
+              src={`${basePath}/images/icons/debtcat_1.png`}
               alt="DebtCat landing page showing the main homepage"
               width={1200}
               height={600}

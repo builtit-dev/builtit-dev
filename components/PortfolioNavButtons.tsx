@@ -39,7 +39,7 @@ export default function PortfolioNavButtons() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-start">
             <Link
-              href="/builtit-template/"
+              href="/"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full transition-all duration-300 group backdrop-blur-md"
               style={{
                 background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%)',

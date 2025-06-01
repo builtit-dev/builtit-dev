@@ -4,8 +4,8 @@ import Link from 'next/link'
 import Footer from '@/components/Footer'
 import PortfolioNavButtons from '@/components/PortfolioNavButtons'
 
-// Hardcoded basePath for GitHub Pages deployment
-const basePath = process.env.NODE_ENV === 'development' ? '' : '/builtit-template'
+// Use hardcoded basePath for GitHub Pages deployment
+const basePath = '/builtit-template'
 
 export default function FindMePetCaseStudy() {
   return (
@@ -50,7 +50,7 @@ export default function FindMePetCaseStudy() {
         <div className="my-12 md:my-16">
           <div className="max-w-5xl mx-auto">
             <Image
-              src="/builtit-template/images/shasta_main.png"
+              src={`${basePath}/images/icons/shasta_main.png`}
               alt="FindMe.pet landing page featuring Shasta, the inspiration behind the project"
               width={1200}
               height={600}

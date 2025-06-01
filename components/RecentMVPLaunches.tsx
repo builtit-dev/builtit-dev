@@ -26,7 +26,7 @@ const mvpProjects: MVPProject[] = [
     pillTag: 'AI & Matching Platform',
     pillColor: 'secondary',
     ctaLink: '/portfolio/findme-pet',
-    imagePlaceholder: '/images/shasta_main.png'
+    imagePlaceholder: '/images/icons/shasta_main.png'
   },
   {
     id: 'debtcat',
@@ -36,7 +36,7 @@ const mvpProjects: MVPProject[] = [
     pillTag: 'Fintech & Consumer Rights',
     pillColor: 'primary',
     ctaLink: '/portfolio/debtcat',
-    imagePlaceholder: '/images/debtcat_1.png'
+    imagePlaceholder: '/images/icons/debtcat_1.png'
   }
 ]
 
@@ -158,7 +158,7 @@ const RecentMVPLaunches = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/5 via-transparent to-accent-secondary/5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     
                     <Image
-                      src={`/builtit-template${project.imagePlaceholder}`}
+                      src={`${basePath}${project.imagePlaceholder}`}
                       alt={`${project.title} screenshot`}
                       fill
                       className="object-cover transition-all duration-1000 ease-out group-hover:scale-115 group-hover:brightness-110"
